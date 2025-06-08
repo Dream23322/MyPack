@@ -142,7 +142,7 @@ export class IBlock {
      * @param {IVec3} vector - The vector to add.
      * @returns {IBlock} - Returns a new IBlock with the updated coordinates.
      */
-    addVector(vector, doupdate = false) {
+    addVector(vector) {
         return new IBlock(this.x + vector.x, this.y + vector.y, this.z + vector.z);
     }
 }
