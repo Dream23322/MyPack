@@ -28,10 +28,17 @@ import { IVec3 } from "./IVec3";
  * block.type; // e.g., "minecraft:stone"
  */
 export class IBlock {
-    constructor(x, y, z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    constructor(vec3, y = null, z = null) {
+        if (y !== null && z !== null) {
+            this.x = vec3;
+            this.y = y;
+            this.z = z;
+        } else {
+            this.x = vec3.x;
+            this.y = vec3.y;
+            this.z = vec3.z;
+        }
+        this.vector = y === null && z === null ? vec3 : new IVec3(vec3, y, z);
         this.block = mc.world.getDimension("overworld").getBlock({ x: this.x, y: this.y, z: this.z });
         this.type = this.block.typeId;
         this.dimension = this.block.dimension.id;
