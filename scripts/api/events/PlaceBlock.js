@@ -1,5 +1,5 @@
 import * as mc from "@minecraft/server";
-import { IBlock } from "../api/classes/IBlock";
+import { IBlock } from "../classes/IBlock";
 
 /**
  * @event playerPlaceBlock - Before Event
